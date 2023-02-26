@@ -4,24 +4,39 @@
   border-bottom: 1px solid #000;
   margin: auto;
   position: relative;
+  overflow: hidden;
 }
 #dino {
-  width: 50px;
+  width: 30px;
   height: 50px;
   position: relative;
   top: 150px;
-  background-image: url("assets/dino.png");
-  background-size: 50px 50px;
+  background-image: url("assets/dinoMih.png");
+  background-size: 30px 50px;
 }
-#cactus {
+#planty {
   width: 20px;
   height: 50px;
   position: relative;
   top: 100px;
   left: 580px;
-  background-image: url("assets/cactus.jpg");
+  background-image: url("assets/planty.svg");
   background-size: 20px 50px;
-  animation: cactusMov 2s infinite linear;
+}
+.run-animation-planty {
+  animation: plantyMov 2s infinite linear 1s;
+}
+#customer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 50px;
+  left: 780px;
+  background-image: url("assets/customer.png");
+  background-size: 50px 50px;
+}
+.run-animation-customer {
+  animation: customerMov 2s infinite linear 2s;
 }
 #timer {
   position: absolute;
@@ -30,7 +45,16 @@
   font-weight: bold;
   color: grey;
 }
-@keyframes cactusMov {
+#gameOver {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-weight: bold;
+  color: grey;
+  display: none;
+  flex-direction: column;
+}
+@keyframes plantyMov {
   0% {
     left: 580px;
   }
@@ -38,8 +62,16 @@
     left: -20px;
   }
 }
+@keyframes customerMov {
+  0% {
+    left: 780px;
+  }
+  100% {
+    left: -20px;
+  }
+}
 .jump {
-  animation: jump 0.3s linear;
+  animation: jump 0.5s linear;
 }
 @keyframes jump {
   0% {
@@ -57,4 +89,10 @@
   100% {
     top: 150px;
   }
+}
+.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
